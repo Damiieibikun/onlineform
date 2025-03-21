@@ -12,7 +12,8 @@ const page = () => {
 
     const getForms = async () => {
         try {
-            const response = await axios.get('http://localhost:5001/simple_form/user/get')
+            const response = await axios.get('https://onlineformserver.onrender.com/simple_form/user/get')
+            // const response = await axios.get('http://localhost:5001/simple_form/user/get')
             if(response.data.success){
                 setdata(response.data.data)
             }
@@ -24,7 +25,8 @@ const page = () => {
 
     const deleteUser = async (id) => {
       try {
-        const response = await axios.delete(`http://localhost:5001/simple_form/user/delete/${id}`)
+        const response = await axios.delete(`https://onlineformserver.onrender.com/simple_form/user/delete/${id}`)
+        // const response = await axios.delete(`http://localhost:5001/simple_form/user/delete/${id}`)
         if(response.data.success){
           toast('User Deleted')
            getForms()

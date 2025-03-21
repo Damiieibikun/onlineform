@@ -108,7 +108,8 @@ const page = () => {
         }
         else{
           try {
-            const response = await axios.post('http://localhost:5001/simple_form/user/post', data, {
+            const response = await axios.post('https://onlineformserver.onrender.com/simple_form/user/post', data, {
+            // const response = await axios.post('http://localhost:5001/simple_form/user/post', data, {
               headers: {
                   'Content-Type': 'multipart/form-data', // Set the correct Content-Type
               },
@@ -147,7 +148,8 @@ const page = () => {
 
     const handleOTPSubmit = async () => {
       try {
-          const response = await axios.post('http://localhost:5001/simple_form/user/verify-otp', { email: formData.email, otp });
+          const response = await axios.post('https://onlineformserver.onrender.com/simple_form/user/verify-otp', { email: formData.email, otp });
+          // const response = await axios.post('http://localhost:5001/simple_form/user/verify-otp', { email: formData.email, otp });
   
           if (response.data.message.includes("verified")) {
               toast.success("Registration complete! You can now log in.");
